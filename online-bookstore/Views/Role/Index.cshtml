@@ -1,0 +1,31 @@
+﻿@Model IEnumerable<Mircosoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Available Roles For Application</h2>
+
+@Html:ActionLink("Create Role", "Create", "Role")
+
+
+<style>
+        #role_tbl, .c {
+            border: double;
+        }
+    </style>
+
+    {
+        <table id="role_tbl">
+            <tr>
+                <td class="c">Role Name:</td>
+            </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="c">@item.Name</td>
+                    </tr>
+                }
+        </table>
+        <input type="submit" value="Create Role
+           " />
+    }
